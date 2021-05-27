@@ -14,8 +14,10 @@ make tests
 
 ## Deploy function
 ### Export secrets
+```
 export TF_VAR_slack_bot_token=XXX
 export TF_VAR_ph_api_token=XXX
+```
 ### Deploy
 ```
 make deploy
