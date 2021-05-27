@@ -13,7 +13,7 @@ module "lambda_function" {
   runtime       = "python3.8"
   timeout       = 30
 
-  source_path = "./src/newsbot"
+  source_path = "./src/slacknewsbot"
 
   environment_variables = {
     SLACK_CHANNEL   = var.slack_channel_name

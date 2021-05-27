@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 from pytest import fixture
 
-from newsbot.app import GetHN
+from slacknewsbot.app import GetHN
 
 
 SLACK_TEXT = "Top 3 from HackerNews:\n>*<https://news.ycombinator.com/item?id=1|1>* - <abc|bcd>"

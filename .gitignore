@@ -41,7 +41,7 @@ htmlcov/
 .tox/
 .coverage
 .coverage.*
-.cachepip install -r src/newsbot/requirements.txt
+.cachepip install -r src/slacknewsbot/requirements.txt
 nosetests.xml
 coverage.xml
 *.cover

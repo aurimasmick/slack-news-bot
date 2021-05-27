@@ -4,7 +4,7 @@
 ```
 python3 -m venv venv
 source venv/bin/activate
-pip install -r src/newsbot/requirements.txt
+pip install -r src/slacknewsbot/requirements.txt
 ```
 
 ## Run tests

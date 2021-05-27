@@ -1,4 +1,4 @@
 [report]
 sort = Cover
 [run]
-omit = src/newsbot/venv/*
+omit = src/slacknewsbot/venv/*
