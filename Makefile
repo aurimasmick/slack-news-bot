@@ -2,7 +2,7 @@
 
 check: ## Run linters
 		@echo "*** running linters ***"
-		flake8
+		flake8 --count --show-source --statistics
 		@echo "*** all linters passing ***"
 test: check ## Run tests
 		@echo "*** running tests ***"

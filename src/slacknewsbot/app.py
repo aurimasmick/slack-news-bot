@@ -157,6 +157,7 @@ def post_msg(text):
     return text
 
 
+
 @notify_cloudwatch
 def lambda_handler(event, context):
     if os.environ["QUERY_HN"]:
