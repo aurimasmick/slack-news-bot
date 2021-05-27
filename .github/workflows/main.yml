@@ -32,4 +32,4 @@ jobs:
       
       - name: Test with pytest
         run: |
-          make test
+          PYTHONPATH=./src pytest --cov=src --cov-branch --cov-report term-missing
