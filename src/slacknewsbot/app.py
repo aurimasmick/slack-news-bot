@@ -1,11 +1,11 @@
 import os
 import logging
 import asyncio
-from aiohttp import ClientSession
-import requests
 import json
 from functools import wraps
 
+import requests
+from aiohttp import ClientSession
 from slack_sdk import WebClient
 
 
@@ -22,6 +22,7 @@ logger.setLevel(os.environ.get("LOGGING", logging.DEBUG))
 
 
 def notify_cloudwatch(function):
+    """Log wrapper for CloudWatch"""
     @wraps(function)
     def wrapper(event, context):
         logger.info(f"'{context.function_name}' - entry:'{event}'")
@@ -93,6 +94,7 @@ class GetPH:
             query,
             headers,
             status_code=200):
+        """Get all daily Product Hunt posts with details"""
         request = requests.post(PH_API_URL, data=json.dumps(query), headers=headers)
         if request.status_code == status_code:
             return request.json()
@@ -103,6 +105,7 @@ class GetPH:
             )
 
     def create_ph_text(self):
+        """Create slack text with Product Hunt top stories"""
         text_list = [f"Top {STORIES_NUMBER} from Product Hunt:"]
         query = {
             "query": """
@@ -147,6 +150,7 @@ class GetPH:
 
 
 def post_msg(text):
+    """Send message to slack channel"""
     client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
     client.chat_postMessage(
         channel=os.environ["SLACK_CHANNEL"],
