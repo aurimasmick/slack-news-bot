@@ -163,8 +163,8 @@ def post_msg(text):
 
 @notify_cloudwatch
 def lambda_handler(event, context):
-    if os.environ["QUERY_HN"]:
+    if os.environ["QUERY_HN"] == "true":
         post_msg(GetHN().create_hn_text())
-    if os.environ["QUERY_PH"]:
+    if os.environ["QUERY_PH"] == "true":
         post_msg(GetPH().create_ph_text())
     return "SUCCESS"
