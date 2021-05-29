@@ -113,4 +113,4 @@ venv.bak/
 .terraform*
 *.zip
 *output.txt
-secrets*
+secrets.tfvars
