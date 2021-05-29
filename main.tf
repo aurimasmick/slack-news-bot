@@ -2,7 +2,6 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-
 module "lambda_function" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "2.2.0"
@@ -38,10 +37,10 @@ module "lambda_function" {
 
 # EVENT CONFIG
 resource "aws_cloudwatch_event_rule" "cw_cron" {
-  name        = "${name}-lambda-trigger"
+  name        = "${var.name}-lambda-trigger"
   description = "Lambda trigge to post to Slack"
 
-  schedule_expression = "cron(0 13 * * ? *)"
+  schedule_expression = var.schedule_expression
 }
 
 resource "aws_cloudwatch_event_target" "trigger_slack" {

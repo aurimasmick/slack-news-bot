@@ -29,3 +29,7 @@ variable "stories_number" {
   description = "Number of stories to post to Slack"
   type        = string
 }
+variable "schedule_expression" {
+  description = "Lambda trigger event schedule expression based on cron syntax"
+  type        = string
+}
