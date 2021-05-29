@@ -17,8 +17,8 @@ module "lambda_function" {
   environment_variables = {
     SLACK_CHANNEL   = var.slack_channel_name
     SLACK_BOT_TOKEN = var.slack_bot_token
-    QUERY_HN        = var.query_hn
-    QUERY_PH        = var.query_ph
+    POST_HN         = var.post_hn
+    POST_PH         = var.post_ph
     PH_API_TOKEN    = var.ph_api_token
     STORIES_NUMBER  = var.stories_number
   }

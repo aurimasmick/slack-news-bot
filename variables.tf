@@ -11,12 +11,12 @@ variable "slack_bot_token" {
   type        = string
   sensitive   = true
 }
-variable "query_hn" {
-  description = "Controls whether to get top stories from Hacker News"
+variable "post_hn" {
+  description = "Controls whether to post Hacker News top stories"
   type        = string
 }
-variable "query_ph" {
-  description = "Controls whether to get top stories from Product Hunt. If set to True, need to specify value for ph_api_token variable"
+variable "post_ph" {
+  description = "Controls whether to post Product Hunt top stories. If set to true, need to specify value for ph_api_token variable"
   type        = string
 }
 variable "ph_api_token" {
