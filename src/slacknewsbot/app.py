@@ -75,7 +75,8 @@ class GetHN:
                 "*<{}|{}>* - <{}|{}>".format(
                     "{}/item?id={}".format(HN_URL, story["id"]),
                     story["score"],
-                    story["url"],
+                    # Ask HN type posts do not have 'url' key, so using get to return None
+                    story.get('url'),
                     story["title"],
                 )
             )
